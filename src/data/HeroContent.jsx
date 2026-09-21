@@ -1,4 +1,6 @@
 const heroContent = {
+  heroImage: "img/hero/background.png",
+  heroMobileImage: "img-mobile",
   heroTitleName: "Jose Berrios",
   heroDesignation: "Shopify/web Engineer",
   heroDescriptions: `I'm a Shopify and web developer 
@@ -7,13 +9,4 @@ const heroContent = {
   heroBtn: "more about me",
 };
 
-const dark = {
-  heroImage: "img/hero/dark.jpg",
-  heroMobileImage: "img-mobile",
-  heroTitleName: heroContent.heroTitleName,
-  heroDesignation: heroContent.heroDesignation,
-  heroDescriptions: heroContent.heroDescriptions,
-  heroBtn: heroContent.heroBtn,
-};
-
-export { dark };
+export { heroContent };

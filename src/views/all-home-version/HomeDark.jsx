@@ -22,7 +22,10 @@ const HomeDark = () => {
   }, []);
 
   return (
-    <div className="yellow">
+    <div >
+      <div className="brand-logo d-none d-lg-block">
+        <img src="/img/logo.png" alt="NovaGear logo" />
+      </div>
       <Tabs>
         <div className="header">
           <TabList className=" icon-menu  revealator-slideup revealator-once revealator-delay1">
@@ -38,13 +41,21 @@ const HomeDark = () => {
 
         <div className="tab-panel_list">
           {/* Hero Content Starts */}
-          <TabPanel className="home ">
+          <TabPanel
+            className="home "
+            style={{
+              backgroundImage: "url('/img/hero/background.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundAttachment: "fixed",
+            }}
+          >
             <div
               className="container-fluid main-container container-home p-0 "
               data-aos="fade-up"
               data-aos-duration="1200"
             >
-              <div className="color-block d-none d-lg-block"></div>
               <Hero />
             </div>
           </TabPanel>

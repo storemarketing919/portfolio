@@ -475,6 +475,21 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   }
 }
 
+.brand-logo {
+  position: fixed;
+  left: 30px;
+  top: 28px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo img {
+  width: 210px;
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(78, 146, 255, 0.35));
+}
+
 .header {
   position: fixed;
   right: 30px;
@@ -614,15 +629,6 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 /*================================================== */
 
 /*** Homepage ***/
-
-.home .color-block {
-  position: fixed;
-  height: 200%;
-  width: 100%;
-  transform: rotate(-15deg);
-  left: -83%;
-  top: -50%;
-}
 
 .home .bg {
   background-size: cover;
