@@ -44,7 +44,8 @@ const HomeDark = () => {
           <TabPanel
             className="home "
             style={{
-              backgroundImage: "url('/img/hero/background.png')",
+              backgroundImage:
+                "radial-gradient(circle at 80% 20%, rgba(76, 92, 220, 0.42), transparent 34%), linear-gradient(135deg, #020817 0%, #071d45 52%, #10052b 100%)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",

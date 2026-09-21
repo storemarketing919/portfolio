@@ -1,0 +1,168 @@
+/* NovaGear dark futuristic theme */
+
+body {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(76, 92, 220, 0.3), transparent 34%),
+    linear-gradient(135deg, #020817 0%, #071d45 52%, #10052b 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #e8f1ff;
+}
+
+.tab-panel_list,
+.tab-panel_list > div {
+  background: transparent;
+}
+
+.title-section h1,
+.title-section h1 span,
+.custom-title,
+.about .resume-box h5,
+.portfolio .slideshow figcaption h3,
+.blog .post-content .entry-header h3,
+.blog-post article h1 {
+  color: #f5f9ff;
+}
+
+.title-section h1 span,
+.about .box-stats h3,
+.contact .custom-span-contact i,
+.portfolio .slideshow a,
+.blog-post .meta i {
+  color: #4fd8ff;
+}
+
+.title-bg {
+  color: rgba(76, 143, 255, 0.1);
+}
+
+hr.separator {
+  border-color: rgba(83, 155, 255, 0.22);
+}
+
+.header ul.icon-menu li.icon-box,
+.header ul.icon-menu li.icon-box.react-tabs__tab--selected,
+.header ul.icon-menu li.icon-box:hover {
+  background: rgba(6, 24, 55, 0.88);
+  border: 1px solid rgba(0, 190, 255, 0.3);
+  box-shadow: 0 0 16px rgba(0, 146, 255, 0.12);
+}
+
+.header ul.icon-menu li.icon-box.react-tabs__tab--selected,
+.header ul.icon-menu li.icon-box:hover {
+  background: linear-gradient(135deg, #078edb, #604cff);
+  border-color: #61e5ff;
+}
+
+.about .box-stats,
+.about .resume-box,
+.portfolio .grid figure,
+.blog .post-content,
+.contact .contactform input[type="text"],
+.contact .contactform input[type="email"],
+.contact .contactform textarea {
+  background: rgba(5, 21, 48, 0.76);
+  border: 1px solid rgba(88, 159, 255, 0.25);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.about .box-stats:hover,
+.portfolio .grid li:hover figure,
+.blog .post-container:hover .post-content {
+  border-color: rgba(0, 210, 255, 0.72);
+  box-shadow: 0 0 24px rgba(0, 158, 255, 0.2);
+}
+
+.about .resume-box .time,
+.about .resume-box .icon {
+  background: linear-gradient(135deg, #087fc9, #604cff);
+}
+
+.about .resume-box li:after {
+  border-color: rgba(71, 187, 255, 0.35);
+}
+
+.about .resume-box .place:before {
+  background: #42d5ff;
+}
+
+.about .c100 {
+  background-color: rgba(5, 21, 48, 0.9);
+}
+
+.about .c100:after {
+  background-color: #06152f;
+}
+
+.portfolio-tab-list li,
+.blog .page-link {
+  background: rgba(5, 21, 48, 0.8);
+  border: 1px solid rgba(88, 159, 255, 0.28);
+  color: #d6e7ff;
+}
+
+.portfolio-tab-list li:hover,
+.portfolio-tab-list li.react-tabs__tab--selected,
+.blog .page-item.active .page-link,
+.blog .page-link:hover {
+  background: linear-gradient(135deg, #078edb, #604cff);
+  border-color: #5fe1ff;
+  color: #fff;
+}
+
+.contact .contactform input::placeholder,
+.contact .contactform textarea::placeholder {
+  color: #91a8c8;
+}
+
+.contact .contactform input[type="text"]:focus,
+.contact .contactform input[type="email"]:focus,
+.contact .contactform textarea:focus {
+  border-color: #46d9ff;
+  box-shadow: 0 0 0 3px rgba(0, 196, 255, 0.12), 0 0 18px rgba(0, 145, 255, 0.2);
+}
+
+.contact ul.social li a {
+  background: rgba(5, 21, 48, 0.8);
+  border: 1px solid rgba(88, 159, 255, 0.3);
+  color: #8edfff;
+}
+
+.contact ul.social li a:hover {
+  background: linear-gradient(135deg, #078edb, #604cff);
+  border-color: #61e5ff;
+  color: #fff;
+}
+
+.custom-modal.dark {
+  background: #06152f;
+  border: 1px solid rgba(81, 202, 255, 0.45);
+  box-shadow: 0 0 50px rgba(0, 123, 255, 0.25);
+}
+
+.custom-modal.dark .box_inner {
+  background: rgba(3, 13, 33, 0.96);
+}
+
+.custom-overlay.dark {
+  background: rgba(1, 5, 18, 0.88);
+}
+
+.button {
+  border-color: #2cd4ff;
+  box-shadow: 0 0 16px rgba(0, 186, 255, 0.18);
+}
+
+.button:before,
+.button-icon {
+  background: linear-gradient(135deg, #078edb, #604cff);
+}
+
+body::-webkit-scrollbar-track {
+  background: #030b1c;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(#00c6ff, #604cff);
+}
