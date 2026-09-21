@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Hero from "../../components/hero/Hero";
 import Index from "../../components/about/index";
@@ -17,13 +17,12 @@ const menuItem = [
 ];
 
 const HomeDark = () => {
+  useEffect(() => {
+    document.body.classList.remove("light");
+  }, []);
+
   return (
     <div className="yellow">
-      <div className="demo-sticker">
-        <a href="/home-light">
-          <i className="fa fa-lightbulb-o" aria-hidden="true"></i>
-        </a>
-      </div>
       <Tabs>
         <div className="header">
           <TabList className=" icon-menu  revealator-slideup revealator-once revealator-delay1">
