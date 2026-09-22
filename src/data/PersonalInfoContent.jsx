@@ -1,14 +1,13 @@
 const personalInfoContent = [
-  { meta: "first name", metaInfo: "Steve" },
-  { meta: "last name", metaInfo: "Milner" },
-  { meta: "Age", metaInfo: "27 Years" },
-  { meta: "Nationality", metaInfo: "Tunisian" },
+  { meta: "first name", metaInfo: "Marvin" },
+  { meta: "last name", metaInfo: "Carino" },
+  { meta: "Age", metaInfo: "28 Years" },
+  { meta: "Nationality", metaInfo: "USA" },
   { meta: "Freelance", metaInfo: "Available" },
-  { meta: "Address", metaInfo: "Tunis" },
-  { meta: "phone", metaInfo: "+21621184010" },
-  { meta: "Email", metaInfo: "you@mail.com" },
-  { meta: "Skype", metaInfo: " steve.milner" },
-  { meta: "langages", metaInfo: "French, English" },
+  { meta: "Address", metaInfo: "Shatto Stree, Los Angeles" },
+  { meta: "phone", metaInfo: "+1 317 743 4374" },
+  { meta: "Email", metaInfo: "storemarketing919@gmail.com" },
+  { meta: "langages", metaInfo: "English" },
 ];
 
 export default personalInfoContent;

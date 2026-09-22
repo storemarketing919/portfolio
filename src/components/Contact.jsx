@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
+const contactEmail = "storemarketing919@gmail.com";
+
 const Contact = () => {
   const {
     register,
@@ -9,8 +11,15 @@ const Contact = () => {
   } = useForm();
 
   const onSubmit = (data, e) => {
+    const { name, email, subject, message } = data;
+    const mailtoLink = `mailto:${contactEmail}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`
+    )}`;
+
+    window.location.href = mailtoLink;
     e.target.reset();
-    console.log("Message submited: " + JSON.stringify(data));
   };
 
   return (

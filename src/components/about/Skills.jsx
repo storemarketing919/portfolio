@@ -1,16 +1,68 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import skillsContent from "../../data/SkillsContent";
 
+const getSkillProgressColor = (percentage) => {
+  if (percentage === 100) {
+    return "#ffb703";
+  }
+
+  if (percentage >= 90) {
+    return "#ff4fa3";
+  }
+
+  if (percentage >= 70) {
+    return "#00d9ff";
+  }
+
+  if (percentage >= 40) {
+    return "#4f8cff";
+  }
+
+  return "#20e3b2";
+};
+
 const Skills = () => {
+  const firstSkillRef = useRef(null);
+  const [hasStarted, setHasStarted] = useState(false);
   const [visiblePercentages, setVisiblePercentages] = useState(
     skillsContent.map(() => 0)
   );
 
   useEffect(() => {
-    const startTime = performance.now();
-    const duration = 1400;
+    const skillElement = firstSkillRef.current;
+
+    if (!skillElement || hasStarted) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasStarted(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(skillElement);
+
+    return () => observer.disconnect();
+  }, [hasStarted]);
+
+  useEffect(() => {
+    if (!hasStarted) {
+      return undefined;
+    }
+
+    const duration = 2400;
     let animationFrame;
+    let startTime;
+    const startDelay = window.setTimeout(() => {
+      startTime = performance.now();
+      animationFrame = requestAnimationFrame(animatePercentages);
+    }, 450);
 
     const animatePercentages = (currentTime) => {
       const progress = Math.min((currentTime - startTime) / duration, 1);
@@ -18,7 +70,10 @@ const Skills = () => {
 
       setVisiblePercentages(
         skillsContent.map((skill) =>
-          Math.round(Number(skill.skillPercent) * easedProgress)
+          Math.min(
+            Number(skill.skillPercent),
+            Math.round(Number(skill.skillPercent) * easedProgress)
+          )
         )
       );
 
@@ -27,38 +82,53 @@ const Skills = () => {
       }
     };
 
-    animationFrame = requestAnimationFrame(animatePercentages);
-
-    return () => cancelAnimationFrame(animationFrame);
-  }, []);
+    return () => {
+      window.clearTimeout(startDelay);
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [hasStarted]);
 
   return (
     <>
-      {skillsContent.map((val, i) => (
-        <div className="col-6 col-md-3 mb-3 mb-sm-5" key={i}>
+      {skillsContent.map((val, i) => {
+        const progressColor = getSkillProgressColor(Number(val.skillPercent));
+        const progressStop = Math.min(100, visiblePercentages[i]);
+
+        return (
           <div
-            className={`c100 ${val.skillClass} skill-progress`}
-            style={{ "--skill-delay": `${i * 100}ms` }}
+            className="col-6 col-md-3 mb-3 mb-sm-5"
+            key={i}
+            ref={i === 0 ? firstSkillRef : undefined}
+          >
+          <div
+            className={`c100 skill-progress${
+              hasStarted ? " skill-progress-visible" : ""
+            }${
+              Number(val.skillPercent) === 100 ? " skill-complete" : ""
+            }`}
+            style={{
+              "--skill-delay": `${i * 180}ms`,
+              "--skill-color": progressColor,
+            }}
           >
             <div
               className="skill-progress-ring"
               style={{
-                background: `conic-gradient(from -90deg, #00d9ff 0%, #4f8cff 55%, #a855f7 ${visiblePercentages[i]}%, rgba(70, 105, 150, 0.28) ${visiblePercentages[i]}% 100%)`,
+                background: `conic-gradient(from -90deg, ${progressColor} 0%, ${progressColor} ${progressStop}%, rgba(70, 105, 150, 0.28) ${progressStop}% 100%)`,
               }}
             />
             <span className="skill-progress-number">
               {visiblePercentages[i]}%
             </span>
-            <div className="slice">
-              <div className="bar"></div>
-              <div className="fill"></div>
-            </div>
           </div>
           <h6 className="text-uppercase open-sans-font text-center mt-2 mt-sm-4">
             {val.skillName}
           </h6>
-        </div>
-      ))}
+          </div>
+        );
+      })}
     </>
   );
 };

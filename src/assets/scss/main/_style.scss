@@ -159,10 +159,6 @@ body.light .about .resume-box p {
   color: #666;
 }
 
-body.light .about .resume-box .place:before {
-  background-color: #666;
-}
-
 body.light .about .resume-box li:after {
   border-left: 1px solid #ddd;
 }
@@ -963,6 +959,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   margin: 0;
   color: #eee;
   font-size: 14px;
+  white-space: pre-line;
 }
 
 .about .resume-box .place {
@@ -970,18 +967,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   font-weight: 600;
   font-size: 15px;
   position: relative;
-  padding-left: 26px;
-}
-
-.about .resume-box .place:before {
-  position: absolute;
-  content: "";
-  width: 10px;
-  height: 2px;
-  background-color: #fff;
-  left: 7px;
-  top: 9px;
-  opacity: 0.8;
+  display: block;
 }
 
 /* Skills */
@@ -1001,22 +987,27 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 }
 
 .about .skill-progress {
-  animation: skill-progress-appear 700ms ease-out both;
+  opacity: 0;
   animation-delay: var(--skill-delay, 0ms);
   background: rgba(70, 105, 150, 0.28);
+  isolation: isolate;
   overflow: hidden;
+  transform: scale(0.82);
+}
+
+.about .skill-progress-visible {
+  animation: skill-progress-appear 1200ms ease-out both;
 }
 
 .about .skill-progress-ring {
   border-radius: 50%;
-  filter: drop-shadow(0 0 7px rgba(0, 198, 255, 0.5));
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   transition: background 80ms linear;
   width: 100%;
-  z-index: 0;
+  z-index: 2;
 }
 
 .about .skill-progress-ring:after {
@@ -1040,12 +1031,29 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 }
 
 .about .skill-progress-number {
-  background: linear-gradient(135deg, #00d9ff, #a855f7);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent !important;
+  align-items: center;
+  display: flex;
+  inset: 0;
+  font-size: 0.2em;
+  justify-content: center;
+  line-height: 1;
+  position: absolute !important;
+  color: var(--skill-color) !important;
   font-weight: 700;
-  text-shadow: 0 0 12px rgba(0, 198, 255, 0.35);
+  opacity: 1 !important;
+  text-align: center;
+  visibility: visible !important;
+  width: 100%;
+  z-index: 10 !important;
+}
+
+.about .skill-progress > .skill-progress-number {
+  color: var(--skill-color) !important;
+  z-index: 10 !important;
+}
+
+.about .skill-progress.skill-complete .skill-progress-number {
+  color: #fff7cc !important;
 }
 
 .about .skill-progress .slice {
