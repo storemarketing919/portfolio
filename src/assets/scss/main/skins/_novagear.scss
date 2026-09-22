@@ -37,6 +37,131 @@ body {
   color: rgba(76, 143, 255, 0.1);
 }
 
+.title-section {
+  padding-top: 86px;
+  padding-bottom: 76px;
+}
+
+.title-section h1 {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(100deg, #00d9ff 0%, #5b7cff 58%, #bd6cff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 1px;
+  text-shadow: 0 0 24px rgba(0, 198, 255, 0.18);
+}
+
+.title-section h1:after {
+  content: "";
+  display: block;
+  width: 74px;
+  height: 3px;
+  margin: 18px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #00d9ff, #5b7cff, #bd6cff);
+  box-shadow: 0 0 14px rgba(0, 217, 255, 0.65);
+}
+
+.title-section .title-bg {
+  color: rgba(85, 167, 255, 0.13);
+  text-shadow: 0 0 28px rgba(81, 123, 255, 0.22);
+}
+
+.about,
+.contact,
+.blog {
+  position: relative;
+}
+
+.about:before,
+.contact:before,
+.blog:before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 217, 255, 0.48),
+    rgba(189, 108, 255, 0.48),
+    transparent
+  );
+  box-shadow: 0 0 18px rgba(0, 180, 255, 0.24);
+}
+
+.about .title-section h1,
+.contact .title-section h1,
+.blog .title-section h1 {
+  font-size: clamp(42px, 5vw, 56px);
+}
+
+.box_inner.about {
+  background:
+    radial-gradient(circle at 90% 8%, rgba(105, 74, 255, 0.18), transparent 28%),
+    linear-gradient(145deg, rgba(7, 27, 62, 0.98), rgba(10, 13, 42, 0.98));
+  border: 1px solid rgba(67, 207, 255, 0.42);
+  box-shadow: 0 0 40px rgba(25, 142, 255, 0.16);
+}
+
+.about .title-section h1 {
+  background: linear-gradient(100deg, #00d9ff, #5b7cff 58%, #bd6cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 1px;
+  text-shadow: 0 0 24px rgba(0, 198, 255, 0.18);
+}
+
+.about .title-bg {
+  color: rgba(85, 167, 255, 0.12);
+}
+
+.about .main-content {
+  color: #dceaff;
+}
+
+.about .about-list .title {
+  color: #91b9e8;
+}
+
+.about .about-list .value,
+.about .resume-box p,
+.about .box-stats p {
+  color: #e5f1ff;
+}
+
+.about .box-stats {
+  background: linear-gradient(145deg, rgba(14, 49, 101, 0.86), rgba(16, 28, 70, 0.86));
+  border: 1px solid rgba(84, 190, 255, 0.4);
+  border-radius: 12px;
+  transition: 250ms ease;
+}
+
+.about .box-stats:hover {
+  transform: translateY(-4px);
+}
+
+.about .resume-box {
+  background: rgba(9, 31, 70, 0.72);
+  border: 1px solid rgba(84, 190, 255, 0.28);
+  border-radius: 12px;
+  padding: 25px 22px;
+}
+
+.about .custom-title {
+  color: #f4f9ff;
+  letter-spacing: 1px;
+}
+
+.about .custom-title span {
+  color: #4fd8ff;
+}
+
 hr.separator {
   border-color: rgba(83, 155, 255, 0.22);
 }
@@ -93,6 +218,153 @@ hr.separator {
 
 .about .c100:after {
   background-color: #06152f;
+}
+
+.contact > .container,
+.blog > .container {
+  position: relative;
+  z-index: 1;
+  padding: 30px 30px 60px;
+  border: 1px solid rgba(88, 159, 255, 0.22);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(0, 217, 255, 0.08), transparent 30%),
+    linear-gradient(145deg, rgba(5, 25, 58, 0.72), rgba(12, 9, 43, 0.72));
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+}
+
+.contact > .container {
+  padding-top: 34px;
+}
+
+.contact .custom-title {
+  background: linear-gradient(100deg, #f4f9ff, #8edfff 70%, #bd6cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.contact .custom-span-contact {
+  color: #dceaff;
+}
+
+.contact .custom-span-contact .contact-icon {
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(86, 218, 255, 0.7);
+  border-radius: 12px;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 217, 255, 0.22),
+    rgba(91, 124, 255, 0.24) 58%,
+    rgba(189, 108, 255, 0.25)
+  );
+  box-shadow:
+    0 0 16px rgba(0, 190, 255, 0.2),
+    inset 0 0 12px rgba(116, 164, 255, 0.12);
+  color: #5ee7ff;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.contact .custom-span-contact:hover .contact-icon {
+  transform: translateY(-2px);
+  border-color: #b77cff;
+  box-shadow:
+    0 0 22px rgba(0, 190, 255, 0.32),
+    0 0 32px rgba(139, 92, 246, 0.16);
+}
+
+.contact .custom-span-contact .contact-icon svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.contact .custom-span-contact .contact-icon circle {
+  fill: rgba(94, 231, 255, 0.18);
+}
+
+.contact .custom-span-contact > .d-block {
+  color: #91b9e8;
+}
+
+.contact .custom-span-contact a {
+  color: #e8f5ff;
+  transition: color 180ms ease;
+}
+
+.contact .custom-span-contact a:hover {
+  color: #4fd8ff;
+}
+
+.contact .contactform {
+  padding: 24px;
+  border: 1px solid rgba(84, 190, 255, 0.24);
+  border-radius: 14px;
+  background: rgba(3, 14, 37, 0.44);
+}
+
+.contact .contactform input[type="text"],
+.contact .contactform input[type="email"],
+.contact .contactform textarea {
+  border-color: rgba(88, 159, 255, 0.3);
+  background: rgba(5, 21, 48, 0.9);
+}
+
+.blog .post-container {
+  overflow: hidden;
+  border: 1px solid rgba(88, 159, 255, 0.24);
+  border-radius: 9px;
+  background: rgba(3, 14, 37, 0.42);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.blog .post-container:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 217, 255, 0.7);
+  box-shadow: 0 0 28px rgba(0, 158, 255, 0.22);
+}
+
+.blog .post-content {
+  border-radius: 0;
+  background:
+    linear-gradient(145deg, rgba(9, 31, 70, 0.9), rgba(15, 17, 59, 0.9));
+}
+
+.blog .post-content .entry-header h3 {
+  background: linear-gradient(100deg, #f5f9ff, #8edfff 72%, #bd6cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.blog .post-content .entry-content p {
+  color: #bdd2ed;
+}
+
+@media (max-width: 767px) {
+  .title-section {
+    padding-top: 58px;
+    padding-bottom: 54px;
+  }
+
+  .contact > .container,
+  .blog > .container {
+    padding: 20px 15px 40px;
+  }
+
+  .contact .contactform {
+    padding: 18px 14px;
+  }
 }
 
 .portfolio-tab-list li,

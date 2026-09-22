@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Hero from "../../components/hero/Hero";
 import Index from "../../components/about/index";
@@ -17,16 +17,34 @@ const menuItem = [
 ];
 
 const HomeDark = () => {
+  const [selectedTab, setSelectedTab] = useState(0);
+
   useEffect(() => {
     document.body.classList.remove("light");
   }, []);
 
+  const goToHome = () => setSelectedTab(0);
+
+  const handleLogoKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      goToHome();
+    }
+  };
+
   return (
     <div >
-      <div className="brand-logo d-none d-lg-block">
+      <div
+        className="brand-logo d-none d-lg-block"
+        role="button"
+        tabIndex={0}
+        aria-label="Go to home page"
+        onClick={goToHome}
+        onKeyDown={handleLogoKeyDown}
+      >
         <img src="/img/logo.png" alt="NovaGear logo" />
       </div>
-      <Tabs>
+      <Tabs selectedIndex={selectedTab} onSelect={setSelectedTab}>
         <div className="header">
           <TabList className=" icon-menu  revealator-slideup revealator-once revealator-delay1">
             {menuItem.map((item, i) => (
