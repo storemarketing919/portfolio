@@ -1000,6 +1000,75 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   background-color: #111;
 }
 
+.about .skill-progress {
+  animation: skill-progress-appear 700ms ease-out both;
+  animation-delay: var(--skill-delay, 0ms);
+  background: rgba(70, 105, 150, 0.28);
+  overflow: hidden;
+}
+
+.about .skill-progress-ring {
+  border-radius: 50%;
+  filter: drop-shadow(0 0 7px rgba(0, 198, 255, 0.5));
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: background 80ms linear;
+  width: 100%;
+  z-index: 0;
+}
+
+.about .skill-progress-ring:after {
+  background-color: #0b2552;
+  border-radius: 50%;
+  content: "";
+  height: 84%;
+  left: 8%;
+  position: absolute;
+  top: 8%;
+  width: 84%;
+}
+
+.about .skill-progress > span {
+  z-index: 2;
+}
+
+.about .skill-progress:after {
+  background-color: #0b2552;
+  z-index: 1;
+}
+
+.about .skill-progress-number {
+  background: linear-gradient(135deg, #00d9ff, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  font-weight: 700;
+  text-shadow: 0 0 12px rgba(0, 198, 255, 0.35);
+}
+
+.about .skill-progress .slice {
+  display: none;
+}
+
+@keyframes skill-progress-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about .skill-progress {
+    animation: none;
+  }
+}
+
 /*** Portfolio ***/
 .portfolio .main-content {
   padding-bottom: 60px;
