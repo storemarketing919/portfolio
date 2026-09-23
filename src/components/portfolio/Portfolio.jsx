@@ -14,31 +14,31 @@ import ModalNineContent from "./modal/ModalNineContent";
 const portfolioTypes = [
   { key: "all", label: "ALL" },
   { key: "frontend", label: "Frontend" },
-  { key: "video", label: "VIDEO" },
-  { key: "graphic-design", label: "GRAPHIC DESIGN" },
-  { key: "mockup", label: "MOCKUP" },
+  { key: "full-stack", label: "FULL-STACK" },
+  { key: "shopify", label: "SHOPIFY" },
+  { key: "design", label: "DESIGN" },
 ];
 
 const portfolioItems = [
   {
     id: "swile",
-    title: "Swile Website",
+    title: "Swile — Website Modernization",
     mainImage: "img/projects/swile.co5.png",
-    types: ["frontend", "mockup"],
+    types: ["frontend", "mockup", "design"],
     modalContent: ModalOneContent,
   },
   {
     id: "rimac",
     title: "RIMAC — Enterprise Insurance Platform",
     mainImage: "img/projects/rimac5.png",
-    types: ["frontend"],
+    types: ["full-stack", "frontend"],
     modalContent: ModalTwoContent,
   },
   {
     id: "ider",
     title: "Slider Project",
     mainImage: "img/projects/ider.cl.PNG",
-    types: ["frontend"],
+    types: ["full-stack", "frontend", "design"],
     modalContent: ModalThreeContent,
   },
   {
