@@ -63,24 +63,19 @@ const ModalTwoContent = () => {
         {/*  Main Project Content Starts */}
         <Slider {...settings}>
           <div className="slide_item">
-            <img src="img/projects/rimac
-            .png" alt="slide 1" />
+            <img src="img/projects/rimac.PNG" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/irimac
-            .png" alt="slide 1" />
+            <img src="img/projects/rimac1.PNG" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/irimac
-            .png" alt="slide 1" />
+            <img src="img/projects/rimac2.PNG" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/irimac
-            .png" alt="slide 1" />
+            <img src="img/projects/rimac3.PNG" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/irimac
-            .png" alt="slide 1" />
+            <img src="img/projects/rimac5.png" alt="slide 1" />
           </div>
         </Slider>
         {/* Main Project Content Ends */}

@@ -1172,22 +1172,31 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   overflow: hidden;
   margin: 0;
 
-  img {
+  > img {
+    aspect-ratio: 895 / 552;
+    background: #06152f;
     border-radius: 6px;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    width: 100%;
   }
 
-  @media screen and (min-width: 1350px) {
-    img {
-      background: #ddd;
-      min-height: 370px;
-    }
-  }
+}
 
-  @media screen and (max-width: 450px) {
-    img {
-      min-height: 166px;
-    }
-  }
+.portfolio .slideshow .slide_item {
+  aspect-ratio: 895 / 552;
+  background: #06152f;
+  overflow: hidden;
+}
+
+.portfolio .slideshow .slide_item img {
+  background: #06152f;
+  border-radius: 6px;
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
 }
 
 .portfolio .slideshow a {
@@ -1218,7 +1227,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 
 .portfolio .slideshow .videocontainer {
   position: relative;
-  padding-bottom: 56.2%;
+  padding-bottom: 61.6759%;
   padding-top: 0;
   height: 0;
   max-width: 100%;

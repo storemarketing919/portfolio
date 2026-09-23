@@ -47,5 +47,56 @@
   }
 }
 .slick-arrow {
-  display: none !important;
+  background-color: rgba(6, 21, 47, 0.86) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 18px 18px !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: 50%;
+  display: block !important;
+  height: 38px;
+  opacity: 0.9;
+  transform: translateY(-50%);
+  width: 38px;
+  z-index: 5;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(6, 21, 47, 0.98) !important;
+    opacity: 1;
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  &::before {
+    content: "" !important;
+  }
+
+  &::after {
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: "";
+    display: block;
+    height: 9px;
+    left: 13px;
+    position: absolute;
+    top: 13px;
+    width: 9px;
+  }
+}
+
+.slick-prev {
+  left: 12px;
+}
+
+.slick-next {
+  right: 12px;
+}
+
+.slick-prev::after {
+  transform: rotate(135deg);
+}
+
+.slick-next::after {
+  transform: rotate(-45deg);
 }

@@ -54,7 +54,7 @@ const ModalFourContent = () => {
             id="video"
             className="responsive-video"
             controls
-            poster="img/projects/project-1.jpg"
+            poster="img/projects/project-4.jpg"
           >
             <source src="img/projects/video.mp4" type="video/mp4" />
           </video>

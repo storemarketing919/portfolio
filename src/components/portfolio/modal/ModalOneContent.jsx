@@ -62,19 +62,19 @@ const ModalOneContent = () => {
         {/*  Main Project Content Starts */}
         <Slider {...settings}>
           <div className="slide_item">
-            <img src="img/projects/swile.co.png" alt="slide 1" />
+            <img src="img/projects/swile.co.PNG" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/swile.co1.png" alt="slide 1" />
+            <img src="img/projects/swile.co1.PNG" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/swile.co2.png" alt="slide 1" />
+            <img src="img/projects/swile.co2.PNG" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/swile.co3.png" alt="slide 1" />
+            <img src="img/projects/swile.co3.PNG" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/swile.co4.png" alt="slide 1" />
+            <img src="img/projects/swile.co4.PNG" alt="slide 1" />
           </div>
         </Slider>
         {/* Main Project Content Ends */}

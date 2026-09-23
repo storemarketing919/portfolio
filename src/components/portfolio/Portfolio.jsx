@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Modal from "react-modal";
 import ModalOneContent from "./modal/ModalOneContent";
-import ModalTwoContent from "./modal/ModalTwoContent_copy";
+import ModalTwoContent from "./modal/ModalTwoContent";
 import ModalThreeContent from "./modal/ModalThreeContent";
 import ModalFourContent from "./modal/ModalFourContent";
 import ModalFiveContent from "./modal/ModalFiveContent";
@@ -11,877 +11,151 @@ import ModalSevenContent from "./modal/ModalSevenContent";
 import ModalEightContent from "./modal/ModalEightContent";
 import ModalNineContent from "./modal/ModalNineContent";
 
-const Portfolio = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isOpen2, setIsOpen2] = useState(false);
-  const [isOpen3, setIsOpen3] = useState(false);
-  const [isOpen4, setIsOpen4] = useState(false);
-  const [isOpen5, setIsOpen5] = useState(false);
-  const [isOpen6, setIsOpen6] = useState(false);
-  const [isOpen7, setIsOpen7] = useState(false);
-  const [isOpen8, setIsOpen8] = useState(false);
-  const [isOpen9, setIsOpen9] = useState(false);
+const portfolioTypes = [
+  { key: "all", label: "ALL" },
+  { key: "frontend", label: "Frontend" },
+  { key: "video", label: "VIDEO" },
+  { key: "graphic-design", label: "GRAPHIC DESIGN" },
+  { key: "mockup", label: "MOCKUP" },
+];
 
-  function toggleModalOne() {
-    setIsOpen(!isOpen);
-  }
-  function toggleModalTwo() {
-    setIsOpen2(!isOpen2);
-  }
-  function toggleModalThree() {
-    setIsOpen3(!isOpen3);
-  }
-  function toggleModalFour() {
-    setIsOpen4(!isOpen4);
-  }
-  function toggleModalFive() {
-    setIsOpen5(!isOpen5);
-  }
-  function toggleModalSix() {
-    setIsOpen6(!isOpen6);
-  }
-  function toggleModalSeven() {
-    setIsOpen7(!isOpen7);
-  }
-  function toggleModalEight() {
-    setIsOpen8(!isOpen8);
-  }
-  function toggleModalNine() {
-    setIsOpen9(!isOpen9);
-  }
+const portfolioItems = [
+  {
+    id: "swile",
+    title: "Swile Website",
+    mainImage: "img/projects/swile.co5.png",
+    types: ["frontend", "mockup"],
+    modalContent: ModalOneContent,
+  },
+  {
+    id: "rimac",
+    title: "RIMAC — Enterprise Insurance Platform",
+    mainImage: "img/projects/rimac5.png",
+    types: ["frontend"],
+    modalContent: ModalTwoContent,
+  },
+  {
+    id: "ider",
+    title: "Slider Project",
+    mainImage: "img/projects/ider.cl.PNG",
+    types: ["frontend"],
+    modalContent: ModalThreeContent,
+  },
+  {
+    id: "local-video",
+    title: "Local Video Project",
+    mainImage: "img/projects/project-4.jpg",
+    types: ["video"],
+    modalContent: ModalFourContent,
+  },
+  {
+    id: "saas",
+    title: "SaaS App Project",
+    mainImage: "img/projects/project-5.jpg",
+    types: ["frontend"],
+    modalContent: ModalFiveContent,
+  },
+  {
+    id: "image",
+    title: "Image Project",
+    mainImage: "img/projects/project-6.jpg",
+    types: ["mockup"],
+    modalContent: ModalSixContent,
+  },
+  {
+    id: "facebook",
+    title: "Facebook Profile",
+    mainImage: "img/projects/project-7.jpg",
+    types: ["graphic-design"],
+    modalContent: ModalSevenContent,
+  },
+  {
+    id: "dribbble",
+    title: "Dribbble Profile",
+    mainImage: "img/projects/project-8.jpg",
+    types: ["graphic-design"],
+    modalContent: ModalEightContent,
+  },
+  {
+    id: "behance",
+    title: "Behance Project",
+    mainImage: "img/projects/project-9.jpg",
+    types: ["graphic-design", "mockup"],
+    modalContent: ModalNineContent,
+  },
+];
+
+const Portfolio = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openModal = (project) => setSelectedProject(project);
+  const closeModal = () => setSelectedProject(null);
+
+  const renderProjects = (type) => {
+    const projects =
+      type === "all"
+        ? portfolioItems
+        : portfolioItems.filter((project) => project.types.includes(type));
+
+    return (
+      <ul className="row grid justify-content-center">
+        {projects.map((project, index) => (
+          <li
+            key={project.id}
+            data-aos="fade-right"
+            data-aos-duration="1200"
+            data-aos-delay={index * 100}
+          >
+            <figure onClick={() => openModal(project)}>
+              <img src={project.mainImage} alt={project.title} />
+              <div className="hover-content-wrapper">
+                <span className="content-title">{project.title}</span>
+              </div>
+            </figure>
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
+  const ModalContent = selectedProject && selectedProject.modalContent;
 
   return (
-    <Tabs>
-      <TabList className="portfolio-tab-list">
-        <Tab>ALL</Tab>
-        <Tab>Frontend</Tab>
-        <Tab>VIDEO</Tab>
-        <Tab>GRAPHIC DESIGN</Tab>
-        <Tab>MOCKUP</Tab>
-      </TabList>
+    <>
+      <Tabs>
+        <TabList className="portfolio-tab-list">
+          {portfolioTypes.map((type) => (
+            <Tab key={type.key}>{type.label}</Tab>
+          ))}
+        </TabList>
 
-      <div className="portfolio-tab-content">
-        <TabPanel>
-          <ul className="row grid justify-content-center">
-            <li
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="0"
-            >
-              <figure onClick={toggleModalOne}>
-                <img src="img/projects/swile.co5.png" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title">Mockup Project</span>
-                </div>
-              </figure>
+        <div className="portfolio-tab-content">
+          {portfolioTypes.map((type) => (
+            <TabPanel key={type.key}>{renderProjects(type.key)}</TabPanel>
+          ))}
+        </div>
+      </Tabs>
 
-              {/* Start ModalOneContent */}
-              <Modal
-                isOpen={isOpen}
-                onRequestClose={toggleModalOne}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalOne}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalOneContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalOneContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="100"
-            >
-              <figure onClick={toggleModalTwo}>
-                <img src="img/projects/rimac5.png" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> RIMAC — Enterprise Insurance Platform</span>
-                </div>
-              </figure>
-
-              {/* Start ModalTwoContent */}
-              <Modal
-                isOpen={isOpen2}
-                onRequestClose={toggleModalTwo}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalTwo}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalTwoContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalTwoContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="200"
-            >
-              <figure onClick={toggleModalThree}>
-                <img src="img/projects/ider.cl.png" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Slider Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalThreeContent */}
-              <Modal
-                isOpen={isOpen3}
-                onRequestClose={toggleModalThree}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalThree}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalThreeContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalThreeContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="0"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalFour}
-              >
-                <img src="img/projects/project-4.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Local Video Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalFourContent */}
-              <Modal
-                isOpen={isOpen4}
-                onRequestClose={toggleModalFour}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalFour}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalFourContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalFourContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="100"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalFive}
-              >
-                <img src="img/projects/project-5.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Saas App Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalFiveContent */}
-              <Modal
-                isOpen={isOpen5}
-                onRequestClose={toggleModalFive}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalFive}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalFiveContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalFiveContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="200"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalSix}
-              >
-                <img src="img/projects/project-6.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Mockup Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalSixContent */}
-              <Modal
-                isOpen={isOpen6}
-                onRequestClose={toggleModalSix}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalSix}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalSixContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalSixContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="0"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalSeven}
-              >
-                <img src="img/projects/project-7.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Facebook Profile</span>
-                </div>
-              </figure>
-
-              {/* Start ModalSevenContent */}
-              <Modal
-                isOpen={isOpen7}
-                onRequestClose={toggleModalSeven}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalSeven}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalSevenContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalSevenContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="100"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalEight}
-              >
-                <img src="img/projects/project-8.jpg" alt="Portolio" />
-
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Dribbble Profile</span>
-                </div>
-              </figure>
-              {/* Start ModalEightContent */}
-              <Modal
-                isOpen={isOpen8}
-                onRequestClose={toggleModalEight}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalEight}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalEightContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalEightContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="200"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalNine}
-              >
-                <img src="img/projects/project-9.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Behance Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalNineContent */}
-              <Modal
-                isOpen={isOpen9}
-                onRequestClose={toggleModalNine}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalNine}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalNineContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalNineContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-          </ul>
-        </TabPanel>
-        {/* End All Project */}
-
-        <TabPanel>
-          <ul className="row grid justify-content-center">
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="0"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalSeven}
-              >
-                <img src="img/projects/project-7.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Facebook Profile</span>
-                </div>
-              </figure>
-
-              {/* Start ModalSevenContent */}
-              <Modal
-                isOpen={isOpen7}
-                onRequestClose={toggleModalSeven}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalSeven}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalSevenContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalSevenContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="0"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalFour}
-              >
-                <img src="img/projects/project-4.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Local Video Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalFourContent */}
-              <Modal
-                isOpen={isOpen4}
-                onRequestClose={toggleModalFour}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalFour}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalFourContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalFourContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="100"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalFive}
-              >
-                <img src="img/projects/project-5.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Saas App Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalFiveContent */}
-              <Modal
-                isOpen={isOpen5}
-                onRequestClose={toggleModalFive}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalFive}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalFiveContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalFiveContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="200"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalSix}
-              >
-                <img src="img/projects/project-6.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Mockup Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalSixContent */}
-              <Modal
-                isOpen={isOpen6}
-                onRequestClose={toggleModalSix}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalSix}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalSixContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalSixContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-          </ul>
-        </TabPanel>
-        {/* End Logo Project */}
-
-        <TabPanel>
-          <ul className="row grid justify-content-center">
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="100"
-            >
-              <figure onClick={toggleModalTwo}>
-                <img src="img/projects/project-2.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Youtube Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalTwoContent */}
-              <Modal
-                isOpen={isOpen2}
-                onRequestClose={toggleModalTwo}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalTwo}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalTwoContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalTwoContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="0"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalFour}
-              >
-                <img src="img/projects/project-4.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Local Video Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalFourContent */}
-              <Modal
-                isOpen={isOpen4}
-                onRequestClose={toggleModalFour}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalFour}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalFourContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalFourContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-          </ul>
-        </TabPanel>
-        {/* End Video Project */}
-
-        <TabPanel>
-          <ul className="row grid justify-content-center">
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="100"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalEight}
-              >
-                <img src="img/projects/project-8.jpg" alt="Portolio" />
-
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Dribbble Profile</span>
-                </div>
-              </figure>
-              {/* Start ModalEightContent */}
-              <Modal
-                isOpen={isOpen8}
-                onRequestClose={toggleModalEight}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalEight}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalEightContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalEightContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="200"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalNine}
-              >
-                <img src="img/projects/project-9.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Behance Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalNineContent */}
-              <Modal
-                isOpen={isOpen9}
-                onRequestClose={toggleModalNine}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalNine}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalNineContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalNineContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-          </ul>
-        </TabPanel>
-        {/* End Graphic Design Project*/}
-
-        <TabPanel>
-          <ul className="row grid justify-content-center">
-            <li
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="0"
-            >
-              <figure onClick={toggleModalOne}>
-                <img src="img/projects/project-1.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title">Mockup Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalOneContent */}
-              <Modal
-                isOpen={isOpen}
-                onRequestClose={toggleModalOne}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalOne}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalOneContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalOneContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="200"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalNine}
-              >
-                <img src="img/projects/project-9.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Behance Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalNineContent */}
-              <Modal
-                isOpen={isOpen9}
-                onRequestClose={toggleModalNine}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalNine}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalNineContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalNineContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-            {/* <!-- Portfolio Item Starts --> */}
-            <li
-              className="direction-reveal"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="200"
-            >
-              <figure
-                className="direction-reveal__card"
-                onClick={toggleModalSix}
-              >
-                <img src="img/projects/project-6.jpg" alt="Portolio" />
-                <div className=" hover-content-wrapper">
-                  <span className="content-title"> Mockup Project</span>
-                </div>
-              </figure>
-
-              {/* Start ModalSixContent */}
-              <Modal
-                isOpen={isOpen6}
-                onRequestClose={toggleModalSix}
-                contentLabel="My dialog"
-                className="custom-modal dark"
-                overlayClassName="custom-overlay dark"
-                closeTimeoutMS={500}
-              >
-                <div>
-                  <button className="close-modal" onClick={toggleModalSix}>
-                    <img src="/img/cancel.svg" alt="close icon" />
-                  </button>
-                  {/* End close icon */}
-
-                  <div className="box_inner portfolio">
-                    <ModalSixContent />
-                  </div>
-                </div>
-              </Modal>
-              {/* End  ModalSixContent */}
-            </li>
-            {/* <!-- Portfolio Item Ends --> */}
-          </ul>
-        </TabPanel>
-        {/* End MOCKUP Project */}
-      </div>
-    </Tabs>
+      <Modal
+        isOpen={Boolean(selectedProject)}
+        onRequestClose={closeModal}
+        contentLabel={selectedProject ? selectedProject.title : "Portfolio project"}
+        className="custom-modal dark"
+        overlayClassName="custom-overlay dark"
+        closeTimeoutMS={500}
+      >
+        <div>
+          <button className="close-modal" onClick={closeModal}>
+            <img src="/img/cancel.svg" alt="close icon" />
+          </button>
+          {ModalContent && (
+            <div className="box_inner portfolio">
+              <ModalContent />
+            </div>
+          )}
+        </div>
+      </Modal>
+    </>
   );
 };
 
