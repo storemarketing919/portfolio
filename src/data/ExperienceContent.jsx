@@ -23,7 +23,7 @@ const experienceContent = [
   },
   {
     year: "2020 - 2021",
-    position: "Full-Stack Developer",
+    position: "Frontend Developer",
     compnayName: "Swile — Website Modernization",
     details: `
       •Developed customer-facing web pages using React and Next.js.

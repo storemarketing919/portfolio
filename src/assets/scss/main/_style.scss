@@ -1120,7 +1120,9 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 .portfolio .grid figure {
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  aspect-ratio: 895 / 552;
   border-radius: 5px;
+  background: #ddd;
   padding: 0;
   position: relative;
   display: flex;
@@ -1128,18 +1130,20 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   overflow: hidden;
 
   @media screen and (min-width: 1300px) {
-    min-height: 229px;
-    background: #ddd;
+    min-height: 0;
   }
 
   @media screen and (max-width: 450px) {
-    min-height: 215px;
+    min-height: 0;
   }
 }
 
 .portfolio .grid figure img {
   display: block;
+  height: 100%;
+  object-fit: cover;
   position: relative;
+  width: 100%;
 }
 
 .portfolio .grid li a {

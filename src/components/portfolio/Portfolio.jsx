@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Modal from "react-modal";
 import ModalOneContent from "./modal/ModalOneContent";
-import ModalTwoContent from "./modal/ModalTwoContent";
+import ModalTwoContent from "./modal/ModalTwoContent_copy";
 import ModalThreeContent from "./modal/ModalThreeContent";
 import ModalFourContent from "./modal/ModalFourContent";
 import ModalFiveContent from "./modal/ModalFiveContent";
@@ -54,7 +54,7 @@ const Portfolio = () => {
     <Tabs>
       <TabList className="portfolio-tab-list">
         <Tab>ALL</Tab>
-        <Tab>LOGO</Tab>
+        <Tab>Frontend</Tab>
         <Tab>VIDEO</Tab>
         <Tab>GRAPHIC DESIGN</Tab>
         <Tab>MOCKUP</Tab>
@@ -69,7 +69,7 @@ const Portfolio = () => {
               data-aos-delay="0"
             >
               <figure onClick={toggleModalOne}>
-                <img src="img/projects/project-1.jpg" alt="Portolio" />
+                <img src="img/projects/swile.co5.png" alt="Portolio" />
                 <div className=" hover-content-wrapper">
                   <span className="content-title">Mockup Project</span>
                 </div>
@@ -106,9 +106,9 @@ const Portfolio = () => {
               data-aos-delay="100"
             >
               <figure onClick={toggleModalTwo}>
-                <img src="img/projects/project-2.jpg" alt="Portolio" />
+                <img src="img/projects/rimac5.png" alt="Portolio" />
                 <div className=" hover-content-wrapper">
-                  <span className="content-title"> Youtube Project</span>
+                  <span className="content-title"> RIMAC — Enterprise Insurance Platform</span>
                 </div>
               </figure>
 
@@ -143,7 +143,7 @@ const Portfolio = () => {
               data-aos-delay="200"
             >
               <figure onClick={toggleModalThree}>
-                <img src="img/projects/project-3.jpg" alt="Portolio" />
+                <img src="img/projects/ider.cl.png" alt="Portolio" />
                 <div className=" hover-content-wrapper">
                   <span className="content-title"> Slider Project</span>
                 </div>
