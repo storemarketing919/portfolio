@@ -7,7 +7,7 @@ const personalInfoContent = [
   { meta: "Address", metaInfo: "Shatto Street, Los Angeles" },
   { meta: "phone", metaInfo: "+1 317 743 4374" },
   { meta: "Email", metaInfo: "storemarketing919@gmail.com" },
-  { meta: "langages", metaInfo: "English" },
+  { meta: "languages", metaInfo: "English" },
 ];
 
 export default personalInfoContent;
