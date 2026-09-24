@@ -9,9 +9,10 @@ var settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
+  arrows: true,
   draggable: false,
 };
-const ModalFourContent = () => {
+const ModalHyperXContent = () => {
   return (
     <div className="slideshow">
       <figure>
@@ -45,11 +46,11 @@ const ModalFourContent = () => {
               <span className="project-label">Preview </span>:{" "}
               <span className="ft-wt-600 uppercase">
                 <a
-                  href="https://videohive.net/"
+                  href="https://hyperx.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  www.videohive.net
+                  www.hyperx.com
                 </a>
               </span>
             </div>
@@ -63,31 +64,33 @@ const ModalFourContent = () => {
         <Slider {...settings}>
           <div className="videocontainer">
             <video
-              id="video"
               className="responsive-video"
               controls
               // poster="img/projects/hyperx.webp"
             >
               <source src="img/projects/hyperx/hyperx.mp4" type="video/mp4" />
             </video>
+          </div>
+          <div className="videocontainer">
             <video
-              id="video"
               className="responsive-video"
               controls
               // poster="img/projects/hyperx1.webp"
             >
               <source src="img/projects/hyperx/hyperx1.mp4" type="video/mp4" />
             </video>
+          </div>
+          <div className="videocontainer">
             <video
-              id="video"
               className="responsive-video"
               controls
               // poster="img/projects/hyperx2.webp"
             >
               <source src="img/projects/hyperx/hyperx2.mp4" type="video/mp4" />
             </video>
+          </div>
+          <div className="videocontainer">
             <video
-              id="video"
               className="responsive-video"
               controls
               // poster="img/projects/hyperx3.webp"
@@ -103,4 +106,4 @@ const ModalFourContent = () => {
   );
 };
 
-export default ModalFourContent;
+export default ModalHyperXContent;

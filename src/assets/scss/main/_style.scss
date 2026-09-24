@@ -1222,20 +1222,27 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   max-width: 100%;
   border-radius: 4px;
   display: block;
-  object-fit: cover;
 }
 
 .portfolio .slideshow .videocontainer {
+  aspect-ratio: 895 / 552;
+  background: #06152f;
   position: relative;
-  padding-bottom: 61.6759%;
   padding-top: 0;
-  height: 0;
+  height: auto;
   max-width: 100%;
   overflow: hidden;
   width: 100%;
   display: block;
   margin: 0;
   border-radius: 4px;
+}
+
+.portfolio .slideshow .videocontainer .responsive-video {
+  background: #06152f;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
 }
 
 .portfolio .slideshow .videocontainer iframe,
