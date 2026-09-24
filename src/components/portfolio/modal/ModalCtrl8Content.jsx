@@ -68,7 +68,7 @@ const ModalHyperXContent = () => {
               controls
               // poster="img/projects/ctrl8.webp"
             >
-              <source src="img/projects/ctrl8/ctrl81.mp4" type="video/mp4" />
+              <source src="https://ctrl8.in/cdn/shop/videos/c/vp/0bd3524314e5406d90fc5c55a89bde9b/0bd3524314e5406d90fc5c55a89bde9b.SD-480p-1.2Mbps-70439838.mp4?v=0" type="video/mp4" />
             </video>
           </div>
           <div className="videocontainer">
@@ -77,7 +77,7 @@ const ModalHyperXContent = () => {
               controls
               // poster="img/projects/ctrl81.webp"
             >
-              <source src="img/projects/ctrl8/ctrl82.mp4" type="video/mp4" />
+              <source src="https://ctrl8.in/cdn/shop/videos/c/vp/fb91f1f0c4124b9aa3a7338a851f154b/fb91f1f0c4124b9aa3a7338a851f154b.SD-480p-1.2Mbps-70439837.mp4?v=0" type="video/mp4" />
             </video>
           </div>
           <div className="videocontainer">
@@ -86,7 +86,7 @@ const ModalHyperXContent = () => {
               controls
               // poster="img/projects/ctrl82.webp"
             >
-              <source src="img/projects/ctrl8/ctrl83.mp4" type="video/mp4" />
+              <source src="https://ctrl8.in/cdn/shop/videos/c/vp/a5bb146111324a5bbccc81a711b0c53b/a5bb146111324a5bbccc81a711b0c53b.SD-480p-1.2Mbps-70439845.mp4?v=0" type="video/mp4" />
             </video>
           </div>
           <div className="videocontainer">
@@ -95,7 +95,7 @@ const ModalHyperXContent = () => {
               controls
               // poster="img/projects/ctrl83.webp"
             >
-              <source src="img/projects/ctrl8/ctrl84.mp4" type="video/mp4" />
+              <source src="https://ctrl8.in/cdn/shop/videos/c/vp/afc25368579141f0b534e2973a8f99ea/afc25368579141f0b534e2973a8f99ea.SD-480p-1.5Mbps-79882184.mp4?v=0" type="video/mp4" />
             </video>
           </div>
         </Slider>
