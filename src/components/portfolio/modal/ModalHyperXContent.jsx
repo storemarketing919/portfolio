@@ -22,21 +22,21 @@ const ModalFourContent = () => {
             <div className="col-12 col-sm-6 mb-2">
               <i className="fa fa-file-text-o pr-2"></i>
               <span className="project-label">Project </span>:{" "}
-              <span className="ft-wt-600 uppercase">Video</span>
+              <span className="ft-wt-600 uppercase">E-commerce Platform</span>
             </div>
             {/* End .col */}
 
             <div className="col-12 col-sm-6 mb-2">
               <i className="fa fa-user-o pr-2"></i>
-              <span className="project-label">Client </span>:{" "}
-              <span className="ft-wt-600 uppercase">Videohive</span>
+              <span className="project-label">Company </span>:{" "}
+              <span className="ft-wt-600 uppercase">HP Inc.</span>
             </div>
             {/* End .col */}
 
             <div className="col-12 col-sm-6 mb-2">
               <i className="fa fa-code pr-2"></i>
-              <span className="project-label">Software </span>:{" "}
-              <span className="ft-wt-600 uppercase">Adobe After Effects</span>
+              <span className="project-label">Skills </span>:{" "}
+              <span className="ft-wt-600 uppercase">Shopify, Liquid, JavaScript, HTML5, CSS3, Shopify CLI, REST/GraphQL APIs, Git/GitHub, Responsive Design, SEO, Performance</span>
             </div>
             {/* End .col */}
 
@@ -68,7 +68,7 @@ const ModalFourContent = () => {
               controls
               // poster="img/projects/hyperx.webp"
             >
-              <source src="img/projects/hyperx.mp4" type="video/mp4" />
+              <source src="img/projects/hyperx/hyperx.mp4" type="video/mp4" />
             </video>
             <video
               id="video"
@@ -76,7 +76,7 @@ const ModalFourContent = () => {
               controls
               // poster="img/projects/hyperx1.webp"
             >
-              <source src="img/projects/hyperx1.mp4" type="video/mp4" />
+              <source src="img/projects/hyperx/hyperx1.mp4" type="video/mp4" />
             </video>
             <video
               id="video"
@@ -84,7 +84,7 @@ const ModalFourContent = () => {
               controls
               // poster="img/projects/hyperx2.webp"
             >
-              <source src="img/projects/hyperx2.mp4" type="video/mp4" />
+              <source src="img/projects/hyperx/hyperx2.mp4" type="video/mp4" />
             </video>
             <video
               id="video"
@@ -92,7 +92,7 @@ const ModalFourContent = () => {
               controls
               // poster="img/projects/hyperx3.webp"
             >
-              <source src="img/projects/hyperx3.mp4" type="video/mp4" />
+              <source src="img/projects/hyperx/hyperx3.mp4" type="video/mp4" />
             </video>
           </div>
         </Slider>

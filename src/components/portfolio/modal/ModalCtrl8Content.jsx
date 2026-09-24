@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const ModalOneContent = () => {
+const ModalThreeContent = () => {
   var settings = {
     dots: true,
     infinite: true,
@@ -25,21 +25,21 @@ const ModalOneContent = () => {
             <div className="col-12 col-sm-6 mb-2">
               <i className="fa fa-file-text-o pr-2"></i>
               <span className="project-label">Project </span>:{" "}
-              <span className="ft-wt-600 uppercase">Website Modernization</span>
+              <span className="ft-wt-600 uppercase">E-commerce</span>
             </div>
             {/* End .col */}
 
             <div className="col-12 col-sm-6 mb-2">
               <i className="fa fa-user-o pr-2"></i>
               <span className="project-label">Company </span>:{" "}
-              <span className="ft-wt-600 uppercase">Swile</span>
+              <span className="ft-wt-600 uppercase">Hari Trading Pvt Ltd</span>
             </div>
             {/* End .col */}
 
             <div className="col-12 col-sm-6 mb-2">
               <i className="fa fa-code pr-2"></i>
-              <span className="project-label">Langages </span>:{" "}
-              <span className="ft-wt-600 uppercase">React.js, Next.js, TypeScript, JavaScript, HTML5, CSS3, Git</span>
+              <span className="project-label">Skills </span>:{" "}
+              <span className="ft-wt-600 uppercase">Shopify, Liquid, JavaScript, HTML5, CSS3, Responsive Design, UI/UX, REST/GraphQL APIs, SEO, Performance Optimization, Git/GitHub</span>
             </div>
             {/* End .col */}
 
@@ -48,10 +48,11 @@ const ModalOneContent = () => {
               <span className="project-label">Preview </span>:{" "}
               <span className="ft-wt-600 uppercase">
                 <a
-                  href="https://swile.co"                  target="_blank"
+                  href="https://www.ctrl8.in"
+                  target="_blank"
                   rel="noreferrer"
                 >
-                  www.swile.co
+                  www.ctrl8.in
                 </a>
               </span>
             </div>
@@ -64,19 +65,19 @@ const ModalOneContent = () => {
         {/*  Main Project Content Starts */}
         <Slider {...settings}>
           <div className="slide_item">
-            <img src="img/projects/swile.co.PNG" alt="slide 1" />
+            <img src="img/projects/ctrl8/ctrl81.png" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/swile.co1.PNG" alt="slide 1" />
+            <img src="img/projects/ctrl8/ctrl82.png" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/swile.co2.PNG" alt="slide 1" />
+            <img src="img/projects/ctrl8/ctrl83.png" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/swile.co3.PNG" alt="slide 1" />
+            <img src="img/projects/ctrl8/ctrl84.png" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/swile.co4.PNG" alt="slide 1" />
+            <img src="img/projects/ctrl8/ctrl85.png" alt="slide 1" />
           </div>
         </Slider>
         {/* Main Project Content Ends */}
@@ -86,4 +87,4 @@ const ModalOneContent = () => {
   );
 };
 
-export default ModalOneContent;
+export default ModalThreeContent;

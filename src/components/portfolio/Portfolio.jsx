@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Modal from "react-modal";
-import ModalOneContent from "./modal/ModalOneContent";
-import ModalTwoContent from "./modal/ModalTwoContent";
-import ModalThreeContent from "./modal/ModalThreeContent";
+import ModalSwileContent from "./modal/ModalSwileContent";
+import ModalRimacContent from "./modal/ModalRimacContent";
+import ModalIderContent from "./modal/ModalIderContent";
 import ModalFourContent from "./modal/ModalFourContent";
 import ModalFiveContent from "./modal/ModalFiveContent";
 import ModalSixContent from "./modal/ModalSixContent";
@@ -11,6 +11,9 @@ import ModalSevenContent from "./modal/ModalSevenContent";
 import ModalEightContent from "./modal/ModalEightContent";
 import ModalNineContent from "./modal/ModalNineContent";
 import ModalHyperXContent from "./modal/ModalHyperXContent";
+import ModalTropicanaContent from "./modal/ModalTropicanaContent";
+import ModalDoiteContent from "./modal/ModalDoiteContent";
+import ModalCtrl8Content from "./modal/ModalCtrl8Content";
 
 const portfolioTypes = [
   { key: "all", label: "ALL" },
@@ -22,38 +25,52 @@ const portfolioItems = [
   {
     id: "swile",
     title: "Swile — Website Modernization",
-    mainImage: "img/projects/swile.co5.png",
+    mainImage: "img/projects/swile/swile.co5.png",
     types: [ "full-stack"],
-    modalContent: ModalOneContent,
+    modalContent: ModalSwileContent,
   },
   {
     id: "rimac",
     title: "RIMAC — Enterprise Insurance Platform",
-    mainImage: "img/projects/rimac5.png",
+    mainImage: "img/projects/rimac/rimac5.png",
     types: ["full-stack"],
-    modalContent: ModalTwoContent,
+    modalContent: ModalRimacContent,
   },
   {
     id: "ider",
     title: "Slider Project",
-    mainImage: "img/projects/ider.cl.PNG",
+    mainImage: "img/projects/ider/ider.cl.PNG",
     types: ["full-stack", "design"],
-    modalContent: ModalThreeContent,
+    modalContent: ModalIderContent,
   },
   {
     id: "hyperx",
     title: "HyperX — Shopify E-commerce Project",
-    mainImage: "img/projects/hyperx.png",
-    types: ["Shopify"],
+    mainImage: "img/projects/hyperx/hyperx.png",
+    types: ["shopify"],
     modalContent: ModalHyperXContent,
   },
   {
-    id: "local-video",
-    title: "Local Video Project",
-    mainImage: "img/projects/project-4.jpg",
-    types: ["video"],
-    modalContent: ModalFourContent,
+    id: "doite",
+    title: "Doite — Shopify E-commerce Project",
+    mainImage: "img/projects/doite/doite.png",
+    types: ["shopify"],
+    modalContent: ModalDoiteContent,
   },
+  {
+    id: "ctrl8",
+    title: "Ctrl8 — Shopify E-commerce Project",
+    mainImage: "img/projects/ctrl8/ctrl8.png",
+    types: ["shopify"],
+    modalContent: ModalCtrl8Content,
+  },
+  // {
+  //   id: "local-video",
+  //   title: "Local Video Project",
+  //   mainImage: "img/projects/project-4.jpg",
+  //   types: ["video"],
+  //   modalContent: ModalFourContent,
+  // },
   {
     id: "saas",
     title: "SaaS App Project",
@@ -64,9 +81,9 @@ const portfolioItems = [
   {
     id: "image",
     title: "Image Project",
-    mainImage: "img/projects/project-6.jpg",
-    types: ["mockup"],
-    modalContent: ModalSixContent,
+    mainImage: "img/projects/tropicana.png",
+    types: ["full-stack"],
+    modalContent: ModalTropicanaContent,
   },
   {
     id: "facebook",

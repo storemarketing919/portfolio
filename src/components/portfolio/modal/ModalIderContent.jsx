@@ -25,21 +25,21 @@ const ModalThreeContent = () => {
             <div className="col-12 col-sm-6 mb-2">
               <i className="fa fa-file-text-o pr-2"></i>
               <span className="project-label">Project </span>:{" "}
-              <span className="ft-wt-600 uppercase">Website</span>
+              <span className="ft-wt-600 uppercase">E-commerce Platform</span>
             </div>
             {/* End .col */}
 
             <div className="col-12 col-sm-6 mb-2">
               <i className="fa fa-user-o pr-2"></i>
-              <span className="project-label">Client </span>:{" "}
-              <span className="ft-wt-600 uppercase">Themeforest</span>
+              <span className="project-label">Company </span>:{" "}
+              <span className="ft-wt-600 uppercase">Walmart</span>
             </div>
             {/* End .col */}
 
             <div className="col-12 col-sm-6 mb-2">
               <i className="fa fa-code pr-2"></i>
-              <span className="project-label">Langages </span>:{" "}
-              <span className="ft-wt-600 uppercase">HTML, CSS, Javascript</span>
+              <span className="project-label">Skills </span>:{" "}
+              <span className="ft-wt-600 uppercase">Next.js, React.js, TypeScript, JavaScript, Node.js, PostgreSQL, BFF, SSR, Caching, Code Splitting, API Integration, Web Performance</span>
             </div>
             {/* End .col */}
 
@@ -48,11 +48,11 @@ const ModalThreeContent = () => {
               <span className="project-label">Preview </span>:{" "}
               <span className="ft-wt-600 uppercase">
                 <a
-                  href="https://themeforest.net/item/edina-personal-portfolio-react-template/34082686"
+                  href="https://www.lider.cl/inicio"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  www.envato.com
+                  www.lider.cl/inicio
                 </a>
               </span>
             </div>
@@ -65,19 +65,19 @@ const ModalThreeContent = () => {
         {/*  Main Project Content Starts */}
         <Slider {...settings}>
           <div className="slide_item">
-            <img src="img/projects/ider.cl.PNG" alt="slide 1" />
+            <img src="img/projects/ider/ider.cl.PNG" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/ider.cl1.PNG" alt="slide 1" />
+            <img src="img/projects/ider/ider.cl1.PNG" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/ider.cl2.PNG" alt="slide 1" />
+            <img src="img/projects/ider/ider.cl2.PNG" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/ider.cl3.PNG" alt="slide 1" />
+            <img src="img/projects/ider/ider.cl3.PNG" alt="slide 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/ider.cl4.PNG" alt="slide 1" />
+            <img src="img/projects/ider/ider.cl4.PNG" alt="slide 1" />
           </div>
         </Slider>
         {/* Main Project Content Ends */}
