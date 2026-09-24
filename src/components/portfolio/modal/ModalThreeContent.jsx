@@ -6,11 +6,13 @@ import "slick-carousel/slick/slick-theme.css";
 const ModalThreeContent = () => {
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     draggable: false,
+    autoplay: true,
+    autoplaySpeed: 1500,
   };
 
   return (

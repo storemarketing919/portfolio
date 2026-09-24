@@ -10,13 +10,12 @@ import ModalSixContent from "./modal/ModalSixContent";
 import ModalSevenContent from "./modal/ModalSevenContent";
 import ModalEightContent from "./modal/ModalEightContent";
 import ModalNineContent from "./modal/ModalNineContent";
+import ModalHyperXContent from "./modal/ModalHyperXContent";
 
 const portfolioTypes = [
   { key: "all", label: "ALL" },
-  { key: "frontend", label: "Frontend" },
   { key: "full-stack", label: "FULL-STACK" },
   { key: "shopify", label: "SHOPIFY" },
-  { key: "design", label: "DESIGN" },
 ];
 
 const portfolioItems = [
@@ -24,22 +23,29 @@ const portfolioItems = [
     id: "swile",
     title: "Swile — Website Modernization",
     mainImage: "img/projects/swile.co5.png",
-    types: ["frontend", "mockup", "design"],
+    types: [ "full-stack"],
     modalContent: ModalOneContent,
   },
   {
     id: "rimac",
     title: "RIMAC — Enterprise Insurance Platform",
     mainImage: "img/projects/rimac5.png",
-    types: ["full-stack", "frontend"],
+    types: ["full-stack"],
     modalContent: ModalTwoContent,
   },
   {
     id: "ider",
     title: "Slider Project",
     mainImage: "img/projects/ider.cl.PNG",
-    types: ["full-stack", "frontend", "design"],
+    types: ["full-stack", "design"],
     modalContent: ModalThreeContent,
+  },
+  {
+    id: "hyperx",
+    title: "HyperX — Shopify E-commerce Project",
+    mainImage: "img/projects/hyperx.png",
+    types: ["Shopify"],
+    modalContent: ModalHyperXContent,
   },
   {
     id: "local-video",
