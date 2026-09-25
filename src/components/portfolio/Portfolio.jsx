@@ -4,12 +4,6 @@ import Modal from "react-modal";
 import ModalSwileContent from "./modal/ModalSwileContent";
 import ModalRimacContent from "./modal/ModalRimacContent";
 import ModalIderContent from "./modal/ModalIderContent";
-// import ModalFourContent from "./modal/ModalFourContent";
-// import ModalFiveContent from "./modal/ModalFiveContent";
-// import ModalSixContent from "./modal/ModalSixContent";
-// import ModalSevenContent from "./modal/ModalSevenContent";
-// import ModalEightContent from "./modal/ModalEightContent";
-// import ModalNineContent from "./modal/ModalNineContent";
 import ModalHyperXContent from "./modal/ModalHyperXContent";
 import ModalTropicanaContent from "./modal/ModalTropicanaContent";
 import ModalDoiteContent from "./modal/ModalDoiteContent";
@@ -64,20 +58,6 @@ const portfolioItems = [
     types: ["shopify"],
     modalContent: ModalCtrl8Content,
   },
-  // {
-  //   id: "local-video",
-  //   title: "Local Video Project",
-  //   mainImage: "img/projects/project-4.jpg",
-  //   types: ["video"],
-  //   modalContent: ModalFourContent,
-  // },
-  // {
-  //   id: "saas",
-  //   title: "SaaS App Project",
-  //   mainImage: "img/projects/project-5.jpg",
-  //   types: ["frontend"],
-  //   modalContent: ModalFiveContent,
-  // },
   {
     id: "image",
     title: "Image Project",
@@ -85,27 +65,6 @@ const portfolioItems = [
     types: ["full-stack"],
     modalContent: ModalTropicanaContent,
   },
-  // {
-  //   id: "facebook",
-  //   title: "Facebook Profile",
-  //   mainImage: "img/projects/project-7.jpg",
-  //   types: ["graphic-design"],
-  //   modalContent: ModalSevenContent,
-  // },
-  // {
-  //   id: "dribbble",
-  //   title: "Dribbble Profile",
-  //   mainImage: "img/projects/project-8.jpg",
-  //   types: ["graphic-design"],
-  //   modalContent: ModalEightContent,
-  // },
-  // {
-  //   id: "behance",
-  //   title: "Behance Project",
-  //   mainImage: "img/projects/project-9.jpg",
-  //   types: ["graphic-design", "mockup"],
-  //   modalContent: ModalNineContent,
-  // },
 ];
 
 const Portfolio = () => {

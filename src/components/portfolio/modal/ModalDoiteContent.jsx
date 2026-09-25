@@ -65,19 +65,19 @@ const ModalThreeContent = () => {
         {/*  Main Project Content Starts */}
         <Slider {...settings}>
           <div className="slide_item">
-            <img src="img/projects/doite/doite1.png" alt="slide 1" />
+            <img src="img/projects/doite/doite1.png" alt="doite 1" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/doite/doite2.png" alt="slide 1" />
+            <img src="img/projects/doite/doite2.png" alt="doite 2" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/doite/doite3.png" alt="slide 1" />
+            <img src="img/projects/doite/doite3.png" alt="doite 3" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/doite/doite4.png" alt="slide 1" />
+            <img src="img/projects/doite/doite4.png" alt="doite 4" />
           </div>
           <div className="slide_item">
-            <img src="img/projects/doite/doite5.png" alt="slide 1" />
+            <img src="img/projects/doite/doite5.png" alt="doite 5" />
           </div>
         </Slider>
         {/* Main Project Content Ends */}
