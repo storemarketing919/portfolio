@@ -5,7 +5,7 @@ const SocialShare = [
     iconName: "fa fa-whatsapp",
     link: "https://www.whatsapp.com/",
   },
-  { iconName: "fa fa-telegram", link: "https://telegram.org/" },
+  { iconName: "fa fa-telegram", link: "https://telegram.org/@offer_selfless_help" },
   { iconName: "fa fa-dribbble", link: "https://dribbble.com/" },
 ];
 
