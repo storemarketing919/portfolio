@@ -13,7 +13,7 @@ const Hero = () => {
           <div className="hero-kicker">IDEAS <span>→</span> CODE <span>→</span> REAL IMPACT</div>
           <h1 className="hero-brand">NovaGear</h1>
           <h2 className="hero-title">
-            Web Engineer &amp;
+            Full-Stack &amp;
             <span>AI Developer</span>
           </h2>
           <p className="hero-description">
@@ -25,7 +25,7 @@ const Hero = () => {
             <div className="hero-service">
               <span className="hero-service-icon fa fa-code"></span>
               <div>
-                <strong>Web Engineering</strong>
+                <strong>Web Development</strong>
                 <small>Modern Web Apps</small>
               </div>
             </div>

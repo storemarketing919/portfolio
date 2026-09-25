@@ -481,9 +481,31 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 }
 
 .brand-logo img {
-  width: 210px;
+  width: clamp(118px, 14vw, 210px);
   height: auto;
   filter: drop-shadow(0 0 12px rgba(78, 146, 255, 0.35));
+}
+
+@media (max-width: 991px) {
+  .brand-logo {
+    left: 18px;
+    top: 18px;
+  }
+
+  .brand-logo img {
+    width: clamp(112px, 30vw, 170px);
+  }
+}
+
+@media (max-width: 575px) {
+  .brand-logo {
+    left: 14px;
+    top: 14px;
+  }
+
+  .brand-logo img {
+    width: clamp(96px, 34vw, 135px);
+  }
 }
 
 .header {

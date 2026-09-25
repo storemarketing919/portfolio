@@ -1,6 +1,6 @@
 const heroContent = {
   heroImage: "img/hero/background.png",
-  heroMobileImage: "img-mobile",
+  heroMobileImage: "mobile",
   heroTitleName: "Mrvin Carino",
   heroDesignation: "Shopify/Fullstack Engineer",
   heroDescriptions: `I'm a Shopify and Fullstack engineer 

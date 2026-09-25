@@ -35,7 +35,7 @@ const HomeDark = () => {
   return (
     <div >
       <div
-        className="brand-logo d-none d-lg-block"
+        className="brand-logo"
         role="button"
         tabIndex={0}
         aria-label="Go to home page"
