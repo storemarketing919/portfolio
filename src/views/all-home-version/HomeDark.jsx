@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Hero from "../../components/hero/Hero";
+import HeroPolygonBackground from "../../components/hero/HeroPolygonBackground";
 import Index from "../../components/about/index";
 import Address from "../../components/Address";
 import Portfolio from "../../components/portfolio/Portfolio";
@@ -57,16 +58,8 @@ const HomeDark = () => {
 
         <div className="tab-panel_list">
           {/* Hero Content Starts */}
-          <TabPanel
-            className="home "
-            style={{
-              backgroundImage: "url('/img/hero/background.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundAttachment: "fixed",
-            }}
-          >
+          <TabPanel className="home">
+            <HeroPolygonBackground />
             <div
               className="container-fluid main-container container-home p-0 "
               data-aos="fade-up"

@@ -104,19 +104,32 @@ const Portfolio = () => {
 
   return (
     <>
-      <Tabs>
-        <TabList className="portfolio-tab-list">
-          {portfolioTypes.map((type) => (
-            <Tab key={type.key}>{type.label}</Tab>
-          ))}
-        </TabList>
-
-        <div className="portfolio-tab-content">
-          {portfolioTypes.map((type) => (
-            <TabPanel key={type.key}>{renderProjects(type.key)}</TabPanel>
+      <div className="portfolio-shell">
+        <div className="portfolio-animated-bg" aria-hidden="true">
+          {portfolioItems.slice(0, 6).map((project, index) => (
+            <img
+              key={project.id}
+              src={project.mainImage}
+              alt=""
+              className={`portfolio-bg-image portfolio-bg-image-${index + 1}`}
+            />
           ))}
         </div>
-      </Tabs>
+
+        <Tabs>
+          <TabList className="portfolio-tab-list">
+            {portfolioTypes.map((type) => (
+              <Tab key={type.key}>{type.label}</Tab>
+            ))}
+          </TabList>
+
+          <div className="portfolio-tab-content">
+            {portfolioTypes.map((type) => (
+              <TabPanel key={type.key}>{renderProjects(type.key)}</TabPanel>
+            ))}
+          </div>
+        </Tabs>
+      </div>
 
       <Modal
         isOpen={Boolean(selectedProject)}
