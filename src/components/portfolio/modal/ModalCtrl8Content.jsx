@@ -1,17 +1,5 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
-var settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: true,
-  draggable: false,
-};
 const ModalHyperXContent = () => {
   return (
     <div className="slideshow">
@@ -61,18 +49,16 @@ const ModalHyperXContent = () => {
         {/* Project Details Ends */}
 
         {/*  Main Project Content Starts */}
-        {/* <Slider {...settings}> */}
           <div className="videocontainer">
-            <video
+            {/* <video
             id="video"
             className="responsive-video"
             controls
             poster="img/projects/ctrl8/ctrl8.png"
           >
             <source src="img/ctrl8.mp4" type="video/mp4" />
-          </video>
+          </video> */}
           </div>
-        {/* </Slider> */}
         {/* Main Project Content Ends */}
       </figure>
     </div>
