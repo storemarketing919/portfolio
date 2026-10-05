@@ -1,9 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import Index from "../../components/about/index";
 
+const HERO_TITLES = ["Full-Stack", "AI Integration", "eCommerce"];
+
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [typedCharacters, setTypedCharacters] = useState(0);
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion) {
+      setTypedCharacters(HERO_TITLES[0].length);
+      return undefined;
+    }
+
+    const phrase = HERO_TITLES[phraseIndex];
+    const delay =
+      isDeleting && typedCharacters === 0
+        ? 700
+        : isDeleting
+          ? 45
+          : typedCharacters === phrase.length
+            ? 1200
+            : 90;
+    const timeoutId = window.setTimeout(() => {
+      if (isDeleting && typedCharacters === 0) {
+        setIsDeleting(false);
+        setPhraseIndex((current) => (current + 1) % HERO_TITLES.length);
+      } else if (isDeleting) {
+        setTypedCharacters((current) => current - 1);
+      } else if (typedCharacters === phrase.length) {
+        setIsDeleting(true);
+      } else {
+        setTypedCharacters((current) => current + 1);
+      }
+    }, delay);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [isDeleting, phraseIndex, typedCharacters]);
 
   return (
     <>
@@ -12,9 +52,15 @@ const Hero = () => {
           <div>
           <div className="hero-kicker">IDEAS <span>→</span> CODE <span>→</span> REAL IMPACT</div>
           <h1 className="hero-brand">NovaGear</h1>
-          <h2 className="hero-title">
-            Full-Stack &amp;
-            <span>AI Developer</span>
+          <h2
+            className="hero-title"
+            aria-label="Full-Stack, AI Integration, and eCommerce"
+          >
+            <span aria-hidden="true">
+              <span className="hero-title-typing">
+                {HERO_TITLES[phraseIndex].slice(0, typedCharacters)}
+              </span>
+            </span>
           </h2>
           <p className="hero-description">
             I build modern, scalable web applications, AI-powered solutions,
