@@ -67,9 +67,9 @@ const ModalHyperXContent = () => {
             id="video"
             className="responsive-video"
             controls
-            poster="img/projects/project-4.jpg"
+            poster="img/projects/ctrl8/ctrl8.png"
           >
-            <source src="img/projects/ctrl8/ctrl8.mp4" type="video/mp4" />
+            <source src="img/ctrl8.mp4" type="video/mp4" />
           </video>
           </div>
         {/* </Slider> */}
