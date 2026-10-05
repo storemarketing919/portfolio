@@ -81,6 +81,19 @@ body {
   background: transparent;
 }
 
+.tab-panel_list {
+  position: relative;
+  isolation: isolate;
+}
+
+.tab-panel_list > .hero-polygon-canvas {
+  z-index: 0;
+}
+
+.tab-panel_list > div {
+  z-index: 1;
+}
+
 .title-section h1,
 .title-section h1 span,
 .custom-title,

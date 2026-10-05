@@ -65,9 +65,9 @@ const HomeDark = () => {
         {/* End Menu Content */}
 
         <div className="tab-panel_list">
+          <HeroPolygonBackground />
           {/* Hero Content Starts */}
           <TabPanel className="home">
-            {/* <HeroPolygonBackground /> */}
             <div
               className="container-fluid main-container container-home p-0 "
               data-aos="fade-up"
