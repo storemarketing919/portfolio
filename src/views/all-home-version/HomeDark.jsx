@@ -22,6 +22,14 @@ const HomeDark = () => {
     document.body.classList.remove("light");
   }, []);
 
+  useEffect(() => {
+    if (selectedTab === 0) {
+      return;
+    }
+
+    window.scrollTo(0, 0);
+  }, [selectedTab]);
+
   const goToHome = () => setSelectedTab(0);
 
   const handleLogoKeyDown = (event) => {
@@ -59,7 +67,7 @@ const HomeDark = () => {
         <div className="tab-panel_list">
           {/* Hero Content Starts */}
           <TabPanel className="home">
-            <HeroPolygonBackground />
+            {/* <HeroPolygonBackground /> */}
             <div
               className="container-fluid main-container container-home p-0 "
               data-aos="fade-up"
@@ -72,16 +80,16 @@ const HomeDark = () => {
 
           {/* About Content Starts */}
           <TabPanel className="about">
-            <div data-aos="fade-up" data-aos-duration="1200">
+            {/* <div data-aos="fade-up" data-aos-duration="1200"> */}
               <div className="title-section text-left text-sm-center">
                 <h1>
                   ABOUT <span>ME</span>
                 </h1>
-                <span className="title-bg">Resume</span>
+                <span className="title-bg">About</span>
               </div>
               {/* End title */}
               <Index />
-            </div>
+            {/* </div> */}
           </TabPanel>
           {/* About Content Ends */}
 
@@ -95,7 +103,7 @@ const HomeDark = () => {
               <h1>
                 my <span>portfolio</span>
               </h1>
-              <span className="title-bg">works</span>
+              <span className="title-bg">portfolio</span>
             </div>
             {/* End title */}
             <div
