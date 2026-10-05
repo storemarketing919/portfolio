@@ -10,8 +10,8 @@ const Address = () => {
             <circle cx="12" cy="9" r="2.25" />
           </svg>
         </span>
-        <span className="d-block">Address Point</span> Shatto Stree Los Angeles, CA 90017,
-        United States Of America.
+        <span className="d-block">Address Point</span> Xaythany District Vientiane City, 01007,
+        Lao People's Democratic Republic.
       </p>
       {/* End .custom-span-contact */}
 
@@ -23,7 +23,7 @@ const Address = () => {
           </svg>
         </span>
         <span className="d-block">mail me</span>{" "}
-        <a href="mailto:storemarketing919@gmail.com">storemarketing919@gmail.com</a>
+        <a href="mailto:kallenluca919@gmail.com">kallenluca919@gmail.com</a>
       </p>
       {/* End .custom-span-contact */}
 
@@ -34,7 +34,7 @@ const Address = () => {
           </svg>
         </span>
         <span className="d-block">call me</span>{" "}
-        <a href="Tel: +1 317 743 4374">+1 317 743 4374</a>
+        <a href="Tel: +856 (205)498-7000">+856 (205)498-7000</a>
       </p>
       {/* End .custom-span-contact */}
     </>

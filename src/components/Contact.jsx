@@ -10,9 +10,9 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
 
-  const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || "service_laoh1kv";
-  const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "template_a9m548n";
-  const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "42gRjh3ogYTjvm-Xy";
+  const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
   const onSubmit = (data, e) => {
 

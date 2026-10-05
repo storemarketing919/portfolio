@@ -62,47 +62,22 @@ const ModalHyperXContent = () => {
 
         {/*  Main Project Content Starts */}
         <Slider {...settings}>
-          <div className="videocontainer">
-            <video
-              className="responsive-video"
-              controls
-              poster="img/projects/hyperx/microph.webp"
-            >
-              <source src="https://hyperx.com/cdn/shop/videos/c/vp/4f0d50f94a0f4d6abc05dc2a74065456/4f0d50f94a0f4d6abc05dc2a74065456.HD-1080p-7.2Mbps-92028506.mp4?v=0" type="video/mp4" />
-            </video>
+          <div className="slide_item">
+            <img src="img/projects/hyperx/hyperx1.png" alt="hyperx 1" />
           </div>
-          <div className="videocontainer">
-            <video
-              className="responsive-video"
-              controls
-              // poster="img/projects/hyperx1.webp"
-            >
-              <source src="https://hyperx.com/cdn/shop/videos/c/vp/1d9870d99bfb4944936c5bd5f635436f/1d9870d99bfb4944936c5bd5f635436f.HD-1080p-7.2Mbps-92029958.mp4?v=0" type="video/mp4" />
-            </video>
+          <div className="slide_item">
+            <img src="img/projects/hyperx/hyperx2.png" alt="hyperx 2" />
           </div>
-          <div className="videocontainer">
-            <video
-              className="responsive-video"
-              controls
-              // poster="img/projects/hyperx2.webp"
-            >
-              <source src="https://hyperx.com/cdn/shop/videos/c/vp/7011f888193c4691af737120394e4bf6/7011f888193c4691af737120394e4bf6.HD-1080p-7.2Mbps-38900647.mp4?v=0" type="video/mp4" />
-            </video>
+          <div className="slide_item">
+            <img src="img/projects/hyperx/hyperx3.png" alt="hyperx 3" />
           </div>
-          <div className="videocontainer">
-            <video
-              className="responsive-video"
-              controls
-              // poster="img/projects/hyperx3.webp"
-            >
-              <source src="https://hyperx.com/cdn/shop/videos/c/vp/50264799ccfa4b778366328c50ada4cb/50264799ccfa4b778366328c50ada4cb.HD-1080p-7.2Mbps-57588407.mp4?v=0" type="video/mp4" />
-            </video>
+          <div className="slide_item">
+            <img src="img/projects/hyperx/hyperx4.png" alt="hyperx 4" />
           </div>
         </Slider>
         {/* Main Project Content Ends */}
       </figure>
     </div>
-    //  End .slideshow
   );
 };
 
